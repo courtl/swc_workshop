@@ -1,14 +1,15 @@
 #notes from software carpentry workshop
 #Date: January 17-18, 2017
 #Author: Courtney L. Luterbach
+#Purpose: This file runs an analysis on the gapminder data
 
 #this may overwrite the file, so be aware
 download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", destfile = "gapminder-FiveYearData.csv")
 
-#reads the file you downloaded into R, should appear environment
+#reads the file you downloaded into R, should appear in the environment
 gapminder <- read.csv("gapminder-FiveYearData.csv")
 
-# load necessary packages
+#load necessary packages
 library("ggplot2")
 
 #set working directory using More File Panel
