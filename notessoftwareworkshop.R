@@ -13,7 +13,7 @@ library("ggplot2")
 
 #set working directory using More File Panel
 
-#functions for a first time data file
+#useful functions for a first time data file
 #head
 #str
 #colnames
