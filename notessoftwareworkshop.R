@@ -2,10 +2,18 @@
 #Date: January 17-18, 2017
 #Author: Courtney L. Luterbach
 
+#this may overwrite the file, so be aware
 download.file("https://raw.githubusercontent.com/swcarpentry/r-novice-gapminder/gh-pages/_episodes_rmd/data/gapminder-FiveYearData.csv", destfile = "gapminder-FiveYearData.csv")
+
+#reads the file you downloaded into R, should appear environment
 gapminder <- read.csv("gapminder-FiveYearData.csv")
 
-#funcions for a first time data file
+# load necessary packages
+library("ggplot2")
+
+#set working directory using More File Panel
+
+#functions for a first time data file
 #head
 #str
 #colnames
@@ -43,4 +51,14 @@ ggplot(data = gapminder, aes(x = year, y = lifeExp, color = year)) + geom_point(
 
 #can also add individual aethetics without using aes
 ggplot(data = gapminder, aes(x = year, y = lifeExp, color = year)) + geom_point(aes(size=gdpPercap)) + geom_line(color = "black")
+
+
+#Workshop Day2 plot creation
+ggplot(data = gapminder, aes(x = year, y = lifeExp, color = continent)) + 
+  geom_point() + facet_grid(.~continent)
+
+#save plot
+ggsave(filename = "year_vs_lifeexp_percont.png", 
+      width = 5, height = 4, units = "in")
+
 
